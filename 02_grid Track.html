@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>格線軌道</title>
+    <style>
+        .wrapper {
+            display: grid;
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+            width: 750px;
+        }
+        .wrapper1 {
+            grid-template-columns: 200px 200px 200px;
+        }
+        .wrapper2 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .wrapper3 {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+        .wrapper4 {
+            grid-template-columns: 500px 1fr 2fr;
+        }
+        
+        .box {
+            border: 1px dashed yellowgreen;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>透過以下兩種屬性定義行與列</h1>
+    <ul>
+        <li>grid-template-columns</li>
+        <li>grid-template-rows</li>
+    </ul>
+    
+
+    <h2>grid-template-columns: 200px 200px 200px;</h2>
+    <p>使用px單位設定內部元素的寬度時，雖然總寬度超過外部的wrapper寬度時會自動換行，但最右側會保留不足寬度的空間</p>
+    <p>如何讓內部元素的寬度自動平均分配?</p>
+    <div class="wrapper wrapper1">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+    <br>
+    
+    <h2>grid-template-columns: 1fr 1fr 1fr;</h2>
+    <p>使用fr單位設定內部元素的寬度時，則會依據比例分配寬度，且最右側不會保留寬度</p>
+    <div class="wrapper wrapper2">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+    <br>
+    <h2>grid-template-columns: 2fr 1fr 1fr;</h2>
+    <p>創建有一個 2fr 的軌道，接著還有兩個 1fr 的軌道。可用空間會因此被分為四塊：其中兩塊給第一個軌道、剩下兩塊給兩個軌道各一個</p>
+    <div class="wrapper wrapper3">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+    <br>
+    <h2>grid-template-columns: 500px 1fr 2fr;</h2>
+    <p>第一個軌道有 500 像素，這個固定的寬度，會因此從可用空間先割一塊出去</p>
+    <p>剩下的空間會被劃分為三塊，並按比例指派給剩下的彈性軌道</p>
+    <div class="wrapper wrapper4">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+
+</body>
+</html>

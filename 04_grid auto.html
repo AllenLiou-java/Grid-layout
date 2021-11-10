@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明式與暗式格線</title>
+    <style>
+        .wrapper {
+            display: grid;
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+            width: 750px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 200px;
+        }
+        .box {
+            border: 1px dashed yellowgreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>透過在暗式格線內的 grid-auto-rows 與 grid-auto-columns 屬性，給軌道定義一套大小</h2>
+    <p>grid-auto-rows: 200px;</p>
+    <p>使用 grid-auto-rows 以確保由暗式格線建立的軌道，高度都會是 200 像素</p>
+    <div class="wrapper">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+</body>
+</html>

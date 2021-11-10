@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gutters</title>
+    <style>
+        .wrapper {
+            display: grid;
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+            width: 750px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 1em;
+        }
+        .box {
+            border: 1px dashed blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>設定row/column的間距</h1>
+    <ul>
+        <li>grid-column-gap</li>
+        <li>grid-row-gap</li>
+        <li>grid-gap</li>
+    </ul>
+    <div class="wrapper">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+</body>
+</html>

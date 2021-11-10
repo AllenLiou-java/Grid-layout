@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-repeat()</title>
+    <style>
+        .wrapper {
+            display: grid;
+            border: 2px solid #f76707;
+            border-radius: 5px;
+            background-color: #fff4e6;
+            width: 750px;
+        }
+        .wrapper1 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .wrapper2 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .wrapper3 {
+            grid-template-columns: 20px repeat(6, 1fr) 20px;
+        }
+        .wrapper4 {
+            grid-template-columns: repeat(5, 1fr 2fr);
+        }
+        .box {
+            border: 1px dashed yellowgreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>grid-template-columns: 1fr 1fr 1fr;</h2>
+    <div class="wrapper wrapper1">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+    <br>
+    <p>上列的寫法可以透過repeat()改寫</p>
+    <h2>grid-template-columns: repeat(3, 1fr);</h2>
+    <div class="wrapper wrapper2">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+    <br>
+    <p>repeat()延伸寫法</p>
+    <h2>grid-template-columns: 20px repeat(6, 1fr) 20px;</h2>
+    <p>建立了有 20 像素的軌道，接著重複 1fr 軌道六次，最後以 20 像素的軌道做結</p>
+    <div class="wrapper wrapper3">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+        <div class="box">Six</div>
+        <div class="box">Seven</div>
+        <div class="box">Eight</div>
+    </div>
+    <br>
+    <h2>grid-template-columns: 20px repeat(5, 1fr 2fr);</h2>
+    <p>下個例子的格線，會包含十個軌道：也就是 1fr 後面有 2fr 的軌道，並重複五次</p>
+    <div class="wrapper wrapper4">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+        <div class="box">Six</div>
+        <div class="box">Seven</div>
+        <div class="box">Eight</div>
+        <div class="box">Nine</div>
+        <div class="box">Ten</div>
+    </div>
+</body>
+</html>
